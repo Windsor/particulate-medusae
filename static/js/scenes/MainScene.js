@@ -8,7 +8,7 @@ var DEBUG_NUDGE = false;
 App.MainScene = MainScene;
 function MainScene() {
   var scene = this.scene = new THREE.Scene();
-  var camera = this.camera = new THREE.PerspectiveCamera(30, 1, 5, 3500);
+  var camera = this.camera = new THREE.PerspectiveCamera(10, 4, 5, 3500);
   var el = this.element = document.getElementById('container');
   this.statsElement = document.getElementById('container-graphs');
 
@@ -16,7 +16,7 @@ function MainScene() {
   this.raycaster = new THREE.Raycaster();
   this.nudgeIndex = 0;
 
-  this.pxRatio = PMath.clamp(1.5, 2, window.devicePixelRatio);
+  this.pxRatio = PMath.clamp(15.5, 2, window.devicePixelRatio);
   this.gravity = -2;
 
   this.usePostFx = true;
@@ -258,7 +258,7 @@ MainScene.prototype.initControls = function () {
   controls.noPan = !ENABLE_PAN;
   controls.staticMoving = false;
 
-  controls.dynamicDampingFactor = 0.2;
+  controls.dynamicDampingFactor = 0.1 ;
   controls.keys = [65, 17, 16];
 
   controls.addEventListener('change', this.onControlsChange.bind(this));
@@ -299,7 +299,7 @@ MainScene.prototype.toggleStats = function () {
 //
 
 MainScene.prototype.onMouseDown = function (event) {
-  this.didDrag = false;
+  this.didDrag = true;
 };
 
 MainScene.prototype.onMouseMove = function (event) {

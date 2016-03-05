@@ -56,8 +56,8 @@ LensDirtTexture.prototype.drawBlob = function (ctx, rx, ry, segments) {
     y = Math.sin(angle) * ry;
     nx = (sx + x) * 0.01;
     ny = (sy + y) * 0.01;
-    x += noise.simplex2(nx, ny) * 5;
-    y += noise.simplex2(nx, ny) * 5;
+    //x += noise.simplex2(nx, ny) * 5;
+    //y += noise.simplex2(nx, ny) * 5;
 
     angle += step;
 

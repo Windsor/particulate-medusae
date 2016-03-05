@@ -7,10 +7,11 @@ function ToggleComponent(config) {
   this.setupMenu(config.menu);
 
   this.isActive = config.isActive != null ? config.isActive : false;
-  this._toggleClassName = toggle.className;
+  if(toggle  != null) {
+    this._toggleClassName = toggle.className;
+    toggle.addEventListener('click', this.toggleState.bind(this), false);
+  }
   this.syncState();
-
-  toggle.addEventListener('click', this.toggleState.bind(this), false);
 }
 
 ToggleComponent.create = App.ctor(ToggleComponent);
@@ -31,7 +32,8 @@ ToggleComponent.prototype.setupMenu = function (name) {
   menu.appendChild(inner);
 
   this._menuClassName = menu.className;
-  this.toggle.className += ' has-menu';
+  if(this.toggle != null)
+    this.toggle.className += ' has-menu';
 };
 
 ToggleComponent.prototype.toggleState = function (event) {

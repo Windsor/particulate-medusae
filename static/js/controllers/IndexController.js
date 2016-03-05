@@ -1,5 +1,6 @@
 var ToggleComponent = App.ToggleComponent;
-var ModalComponent = App.ModalComponent;
+var ModalComponentPL = App.ModalComponent;
+var ModalComponentEN = App.ModalComponent;
 var ColorComponent = App.ColorComponent;
 var Features = App.Features;
 var keysTop = [85, 73, 79, 80];
@@ -25,26 +26,31 @@ App.register('index', function index() {
     isActive : scene.shouldAnimate
   });
 
-  ModalComponent.create({
-    name : 'info'
+  ModalComponentPL.create({
+    name : 'info_pl',
+  });
+
+  ModalComponentEN.create({
+    name : 'info_en',
   });
 
   scene.initItems();
   scene.initForces();
   scene.appendRenderer();
 
-  postFxToggle.addListener('toggle', scene, 'togglePostFx');
   dotsToggle.addListener('toggle', scene, 'toggleDots');
   dotsToggle.addListener('toggle', scene, 'toggleStats');
+  postFxToggle.addListener('toggle', scene, 'togglePostFx');
   simToggle.addListener('toggle', scene, 'toggleAnimate');
 
-  setupAudio(scene);
+  //setupAudio(scene);
   setupColors(scene);
   setupSystemUI(scene);
 
   setTimeout(function () {
     scene.loop.start();
     controls.className = 'active';
+    //ModalComponentPL.isActive = true;
   }, 0);
 });
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Particulate Medusae</title>
+    <title>Tworzymy wielkie dzieła z małych rzeczy. Internet of Things.</title>
 
     <meta name="description" content="Soft body jellyfish simulation. Built with Particulate.js and Three.js">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,60 +18,60 @@
     {% endif %}
   </head>
   <body>
-    <article id="info" class="modal info-modal">
-      <h1>Medusae</h1>
+    <article id="info_pl" class="modal info_pl-modal">
+      <h1>tworzymy <strong>wielkie</strong> dzieła z <strong>małych</strong> rzeczy</h1>
       <div class="info-section">
         <dl>
-          <dt>Concept, Design & Code</dt>
-          <dd><a href="http://jayweeks.com">Jay Weeks</a></dd>
-        </dl>
-        <dl>
-          <dt>Audio Design</dt>
-          <dd>JP Arsenault</a></dd>
+          <dt>internet rzeczy</dt>
+          <dd><a href="mailto:hi@looksmart.com.pl"></a></dd>
         </dl>
       </div>
       <div class="info-section">
         <dl>
-          <dt>Physics</dt>
-          <dd><a href="http://particulatejs.org">Particulate</a></dd>
-        </dl>
-        <dl>
-          <dt>Graphics</dt>
-          <dd><a href="http://threejs.org">Three</a></dd>
+          <dt>łukasz</dt>
+          <dd>ceo / head of future</dd>
         </dl>
       </div>
       <div class="info-section">
         <dl>
-          <dt>Source</dt>
-          <dd><a href="http://github.com/jpweeks/particulate-medusae">Github</a></dd>
-        </dl>
-        <dl>
-          <dt>Process</dt>
-          <dd><a href="https://www.flickr.com/photos/jpweeks/sets/72157646887502644/">Flickr</a></dd>
+          <dt>dołącz do nas</dt>
+          <dd><a href="mailto:hi@looksmart.com.pl">hi@looksmart.com.pl</a></dd>
         </dl>
       </div>
     </article>
-    <div id="cover-info" class="modal-cover"></div>
+    
+    <article id="info_en" class="modal info_en-modal">
+      <h1>we turn <strong>small</strong> things into <strong>masterpieces</strong></h1>
+      <div class="info-section">
+        <dl>
+          <dt>internet of things</dt>
+          <dd><a href="mailto:hi@looksmart.com.pl"></a></dd>
+        </dl>
+      </div>
+      <div class="info-section">
+        <dl>
+          <dt>łukasz</dt>
+          <dd>ceo / head of future</dd>
+        </dl>
+      </div>
+      <div class="info-section">
+        <dl>
+          <dt>join us</dt>
+          <dd><a href="mailto:hi@looksmart.com.pl">hi@looksmart.com.pl</a></dd>
+        </dl>
+      </div>
+    </article>
+    
+    <!--<div id="cover-info_pl" class="modal-cover"></div>!-->
+    <!--<div id="cover-info_en" class="modal-cover"></div>!-->
 
     <div id="container-controls">
-      <div id="toggle-info" class="controls-button">
-        <div class="label">About</div>
-      </div>
-      <div id="toggle-dots" class="controls-button">
-        <div class="label">Particles</div>
-      </div>
       <div id="menu-colors" class="controls-menu"></div>
-      <div id="toggle-colors" class="controls-button">
-        <div class="label">Colors</div>
+      <div id="toggle-info_pl" class="controls-button">
+        <div class="label">pl</div>
       </div>
-      <div id="toggle-audio" class="controls-button">
-        <div class="label">Audio</div>
-      </div>
-      <div id="toggle-postfx" class="controls-button">
-        <div class="label">Post FX</div>
-      </div>
-      <div id="toggle-sim" class="controls-button">
-        <div class="label">Run Sim</div>
+      <div id="toggle-info_en" class="controls-button">
+        <div class="label">en</div>
       </div>
     </div>
 
@@ -99,6 +99,7 @@
       <script src="{{ STATIC_URL }}js/shader-chunks.develop.js"></script>
       <script src="{{ STATIC_URL }}js/shaders.develop.js"></script>
       <script src="{{ STATIC_URL }}js/app.develop.js"></script>
+      <script src="{{ STATIC_URL }}lib/jquery/dist/jquery.js"></script>
       {# Run tests by appending ?test=true to the url #}
       <script>
         if (location.search.indexOf('test=true') > -1) {
