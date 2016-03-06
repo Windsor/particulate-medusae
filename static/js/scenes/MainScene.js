@@ -8,7 +8,7 @@ var DEBUG_NUDGE = false;
 App.MainScene = MainScene;
 function MainScene() {
   var scene = this.scene = new THREE.Scene();
-  var camera = this.camera = new THREE.PerspectiveCamera(10, 4, 5, 3500);
+  var camera = this.camera = new THREE.PerspectiveCamera(25, 4, 5, 2500);
   var el = this.element = document.getElementById('container');
   this.statsElement = document.getElementById('container-graphs');
 
@@ -90,7 +90,7 @@ MainScene.prototype.addPostFx = function () {
   var bloomStrength = 0.8;
   var bloomKernel = 25;
   var bloomSigma = 8;
-  var bloomRes = 512;
+  var bloomRes = 1920;
 
   var renderPass = new THREE.RenderPass(this.scene, this.camera);
   var bloomPass = new THREE.BloomPass(bloomStrength, bloomKernel, bloomSigma, bloomRes);
@@ -103,7 +103,7 @@ MainScene.prototype.addPostFx = function () {
 
   vignettePass.material.uniforms.darkness.value = 0.5;
   vignettePass.material.uniforms.offset.value = 1.25;
-  vignettePass.material.uniforms.color.value = new THREE.Color(0x07070C);
+  vignettePass.material.uniforms.color.value = new THREE.Color(0x000000);
 
   this.addPass(renderPass);
   this.addPass(bloomPass);

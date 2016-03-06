@@ -10,7 +10,7 @@ require('js/controllers/*');
 require('js/scenes/*');
 
 setTimeout(function setup() {
-  var DEBUG = true;
+  var DEBUG = false;
   if (DEBUG && location.search.indexOf('test=true') > -1) {
     App.run('tests');
   } else {
